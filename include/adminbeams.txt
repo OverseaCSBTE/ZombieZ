@@ -1,0 +1,18 @@
+================================================================================
+AMX Mod Plugin
+http://amxmod.net
+--------------------------------------------------------------------------------
+Name   : AdminBeams 1.0 (adminbeams)
+Author : Rich <rich@clansr.co.uk>
+--------------------------------------------------------------------------------
+An amx version of the metamod plugin.  Laser beams show where players are aiming, but the lasers are only visible to deadplayers / spectators.  Cvar amx_adminbeams 0/1 turns it on or off.
+
+The lasers are thin, and team coloured ( orange and cyan so not to be confused with ninjarope )
+
+The point of this plugin is to show where people are aiming if you are third person or floating, as you will see the model only ever roughly points to where people are actually aiming ( bots seem to fake the model direction completely while they scan the area )
+--------------------------------------------------------------------------------
+Installation :
+- Extract file adminbeams.amx to directory addons/amx/plugins
+- Open addons/amx/plugins/plugins.ini
+- Add a line containing : adminbeams.amx
+================================================================================

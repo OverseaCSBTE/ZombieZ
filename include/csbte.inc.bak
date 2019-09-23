@@ -1,0 +1,10 @@
+#include <amxmodx>
+#include <fakemeta>
+#include <hamsandwich>
+
+#define BTE_VERSION 3.0
+#define BTE_VERSION_NUM 30
+stock const BTE_VERSION_STR[] = "3.0"
+
+native BTE_SetGameMode(name[]);
+native BTE_GetGameMode(name[], len);
