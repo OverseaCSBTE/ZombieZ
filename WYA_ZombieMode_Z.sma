@@ -1,3 +1,6 @@
+// Fix Encoding Problem (Maybe this cause ^M ...)
+// Code by 吃藕的人 For CSIE
+
 #include <amxmodx>
 #include <fakemeta>
 #include <fakemeta_util>
