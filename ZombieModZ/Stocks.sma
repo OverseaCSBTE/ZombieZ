@@ -97,3 +97,23 @@ stock SetLight(id,light[])
 	write_string(light)
 	message_end()
 }
+
+stock SetRendering(entity, fx = kRenderFxNone, r = 255, g = 255, b = 255, render = kRenderNormal, amount = 16)
+{
+	static Float:color[3]
+	color[0] = float(r)
+	color[1] = float(g)
+	color[2] = float(b)
+
+	set_pev(entity, pev_renderfx, fx)
+	set_pev(entity, pev_rendercolor, color)
+	set_pev(entity, pev_rendermode, render)
+	set_pev(entity, pev_renderamt, float(amount))
+}
+
+stock StripWeapons(id)
+{
+	set_pev(id, pev_button, pev(id, pev_button) & ~IN_ATTACK & ~IN_ATTACK2)
+
+	dllfunc(DLLFunc_Use, g_player_weaponstrip, id)
+}

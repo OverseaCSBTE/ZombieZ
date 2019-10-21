@@ -17,3 +17,16 @@ public Task_SetLight(id)
 	get_pcvar_string(Cvar_Light,szLight,2)*/
 	SetLight(id,g_light)
 }
+
+public Task_Register_Bots(id)
+{
+	if (g_hamczbots || !is_user_connected(id)) return
+
+	RegisterHamFromEntity(Ham_Spawn, id, "HamF_Spawn_Player")
+	RegisterHamFromEntity(Ham_Spawn, id, "HamF_Spawn_Player_Post", 1)
+	RegisterHamFromEntity(Ham_TakeDamage, id, "HamF_TakeDamage")
+	//RegisterHamFromEntity(Ham_Killed, id, "HamF_Killed")
+	//RegisterHamFromEntity(Ham_Killed, id, "HamF_Killed_Post", 1)
+	g_hamczbots = 1
+	//if (is_user_alive(id)) fw_PlayerSpawn_Post(id)
+}
