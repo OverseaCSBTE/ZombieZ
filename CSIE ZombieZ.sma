@@ -42,14 +42,14 @@ new const v_model[] = "models/v_emotion.mdl" //
 
 public plugin_init()
 {
-register_plugin(PLUGINNAME, VERSION, AUTHOR)
-RegisterHam(Ham_Spawn, "player", "HAM_PlayerSpawn_Post", 1)
-register_event("HLTV","Event_HLTV_New_Round","a","1=0","2=0")
-/*perhp = register_cvar("zbz_hpmore", "3000")//生命补液
-moneyper = register_cvar("zbz_moneymore", "8000")//金融家
-MaxHealth = register_cvar("zbz_maxhealth", "200")//恢复强化获取的最大生命值
-healthup = register_cvar("zbz_healthup", "15")//恢复强化每次恢复的血量*/
-register_clcmd("get_points", "get_skill")//bind  v
+	register_plugin(PLUGINNAME, VERSION, AUTHOR)
+	RegisterHam(Ham_Spawn, "player", "HAM_PlayerSpawn_Post", 1)
+	register_event("HLTV","Event_HLTV_New_Round","a","1=0","2=0")
+	/*perhp = register_cvar("zbz_hpmore", "3000")//生命补液
+	moneyper = register_cvar("zbz_moneymore", "8000")//金融家
+	MaxHealth = register_cvar("zbz_maxhealth", "200")//恢复强化获取的最大生命值
+	healthup = register_cvar("zbz_healthup", "15")//恢复强化每次恢复的血量*/
+	register_clcmd("get_points", "get_skill")//bind  v
 }
 
 public plugin_precache()

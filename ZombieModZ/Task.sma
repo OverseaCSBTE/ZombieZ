@@ -11,13 +11,6 @@ public Task_SetTeam(params[1], taskid)
 		remove_task(id + TASK_TEAM)
 }
 
-public Task_SetLight(id)
-{
-	/*new szLight[2]
-	get_pcvar_string(Cvar_Light,szLight,2)*/
-	SetLight(id,g_light)
-}
-
 public Task_Register_Bots(id)
 {
 	if (g_hamczbots || !is_user_connected(id)) return

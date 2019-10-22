@@ -88,16 +88,6 @@ stock Str_Count(const str[], searchchar)
 	return count
 }
 
-stock SetLight(id,light[])
-{
-	if(!is_user_connected(id)) return
-
-	message_begin(MSG_ONE, SVC_LIGHTSTYLE, _, id)
-	write_byte(0)
-	write_string(light)
-	message_end()
-}
-
 stock SetRendering(entity, fx = kRenderFxNone, r = 255, g = 255, b = 255, render = kRenderNormal, amount = 16)
 {
 	static Float:color[3]

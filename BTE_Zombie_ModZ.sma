@@ -1,6 +1,10 @@
 /*
-	Base on Zombie Mod 3 & Zombie Mod 5 Modified
+	Base on Zombie Mod 3 & Zombie Mod 5 and CSIE Zombie Z
 */
+// ==================================================================
+// Preprocessor
+#pragma compress 1
+// ==================================================================
 
 #include <amxmodx>
 #include <amxmisc>
@@ -17,11 +21,12 @@
 #include "ZombieModZ/inc.inc"
 
 #define PLUGIN "BTE Zombie ModZ"
-#define VERSION "Alpha build001"
-#define AUTHOR "15minutes & NekoMeow"
+#define VERSION "Alpha build002"
+#define AUTHOR "NekoMeow"
 // ==================================================================
 //#define _DEBUG
 // ==================================================================
+#include "ZombieModZ/Enum.sma"
 #include "ZombieModZ/Vars.sma"
 #include "ZombieModZ/Stocks.sma"
 #include "ZombieModZ/Task.sma"
@@ -59,29 +64,7 @@ public plugin_init()
 
 public plugin_precache()
 {
-	new ent
-	if (g_ambience_fog)
-	{
-		ent = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "env_fog"))
-		if (pev_valid(ent))
-		{
-			Set_Kvd(ent, "density", g_fog_density, "env_fog")
-			Set_Kvd(ent, "rendercolor", g_fog_color, "env_fog")
-		}
-	}
-	if (g_ambience_rain)
-		engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "env_rain"))
-	if (g_ambience_snow)
-		engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "env_snow"))
 
-	ent = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "info_map_parameters"))
-	Set_Kvd(ent, "buying", "3", "info_map_parameters")
-	dllfunc(DLLFunc_Spawn, ent)
-	
-	if (g_sky_enable)
-	{
-		set_cvar_string("sv_skyname", g_skyname)
-	}
 }
 
 public client_putinserver(id)
@@ -91,24 +74,11 @@ public client_putinserver(id)
 	// Reg Ham Zbot
 	if (is_user_zbot(id) && !g_hamczbots && get_pcvar_num(bot_quota) > 0)
 		set_task(0.1, "Task_Register_Bots", id)
-		
-	set_task(0.1,"Task_SetLight",id)
 }
 
 public client_disconnect(id)
 {
-	if (task_exists(TASK_MAKEZOMBIE) && g_zbselected[id])
-	{
-		g_zbselected[id] = 0
-		
-		new iRan = GetRandomPlayer(2)
-		
-		if(!iRan)
-			return
-		
-		g_zbselected[iRan] = 1
-		MH_SendZB3Data(iRan, 20, g_count_down - 1)
-	}
+
 }
 
 public plugin_cfg()

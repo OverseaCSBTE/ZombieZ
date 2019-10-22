@@ -22,7 +22,6 @@ public Event_HLTV()
 
 			set_pev(id,pev_gravity,1.0)
 			//RoundStartValue(id)
-			SetLight(id,g_light)
 			//RenderingHuman(id,1)
 
 			set_task(random_float(0.5,1.0),"Make_Human_Msg",id)
