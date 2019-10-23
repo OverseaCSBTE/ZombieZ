@@ -13,23 +13,12 @@ new gFwSpawn, gFwUserInfected, gFwDummyResult
 // Arrays
 new Array:g_objective_ents, Array:sound_human_death, Array:sound_female_death, Array:sound_zombie_coming, Array:sound_zombie_comeback, Array:sound_zombie_attack, Array:sound_zombie_hitwall, Array:sound_zombie_swing
 
-// Zombie Arrays
-new Array:zombie_name, Array:zombie_model, Array:zombie_gravity, 
-Array:zombie_speed, Array:zombie_knockback, 
-Array:zombie_sound_death1, Array:zombie_sound_death2, 
-Array:zombie_sound_hurt1, Array:zombie_sound_hurt2, 
-Array:zombie_viewmodel_host, Array:zombie_viewmodel_origin, 
-Array:zombie_modelindex_host, Array:zombie_modelindex_origin, 
-Array:zombie_wpnmodel, Array:zombie_wpnmodel2, 
-Array:zombie_sound_heal, Array:zombie_sound_evolution, 
-Array:zombiebom_viewmodel, Array:zombiebom_viewmodel2, 
-Array:zombie_sex, Array:zombie_modelindex, 
-Array:zombie_xdamage, Array:zombie_xdamage2, Array:zombie_hosthand
-
-// Hero
-new HERO_MODEL_MALE[64], HERO_MODEL_FEMALE[64]
-new HERO_HEALTH = 3000
-new HERO_MODEL_MALE_INDEX, HERO_MODEL_FEMALE_INDEX
+// ZombieZ Skill
+new UserSkillList[SkillEnum][SkillType] =
+{
+	{ MoneyWorm}
+}
+//new SkillList[Skill]
 
 // Supplybox
 new Float:SUPPLYBOX_TIME, Float:SUPPLYBOX_TIME_FIRST
@@ -71,10 +60,13 @@ new levelupsound
 // ImproveAPI
 new gmsgSpecial
 
+// Bot
+new bot_quota, g_hamczbots
+
 // Need To Sort
 new	g_newround, g_endround, 
 g_startcount, g_rount_count, 
-g_supplybox_count, g_count_down, g_count_down2, g_hamczbots
+g_supplybox_count, g_count_down, g_count_down2
 
 new Float:g_evolution[33], Float:g_flTotalDmg[33]
 new	g_level[33], g_nvg[33], 

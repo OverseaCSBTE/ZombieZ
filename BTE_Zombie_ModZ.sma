@@ -40,8 +40,6 @@
 #include "ZombieModZ/Menu.sma"
 // ==================================================================
 
-new bot_quota
-
 public plugin_init()
 {
 	register_plugin(PLUGIN, VERSION, AUTHOR)

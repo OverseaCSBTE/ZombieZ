@@ -1,63 +1,63 @@
 enum SkillType
 {
-	Common,
+	All,
 	Human,
 	Zombie
 }
 
-enum SkillID
+enum SkillEnum
 {
-	MoneyWorm,
-	Boxer,
-	IncreaseAmmo,
-	FastReload,
-	InvisibleReload,
-	Cheetah,
-	Kangaroo,
-	EnhanceRecovery,
-	FocusAttack,
-	Booster,
-	BulletAddition,
-	HuntingInstinct,
-	DoubleJump,
-	ExplosiveBullets,
+	MoneyWorm, //All
+	Boxer, //Human
+	IncreaseAmmo, //Human
+	FastReload, //Human
+	InvisibleReload, //Human
+	Cheetah, //All
+	Kangaroo, //All
+	EnhanceRecovery, //All
+	FocusAttack, //Human
+	Booster, //Human
+	BulletAddition, //Human
+	HuntingInstinct, //All
+	DoubleJump, //All
+	ExplosiveBullets, //Human
 	ReinforcedGenes,
 	Resist,
-	FireBullets,
-	IncreaseStamina,
+	FireBullets, //Human
+	IncreaseStamina, //All
 	ContactInfection,
 	Resurrection,
 	SteelArmor,
 	Flippers,
 	SteelHead,
-	Sharpshooter,
-	SixthSense,
-	HeroAppearance,
-	Enthusiasm,
-	Specialist,
-	ForcedFall,
+	Sharpshooter, //Human
+	SixthSense, //Human
+	HeroAppearance, //All
+	Enthusiasm, //All
+	Specialist, //Human
+	ForcedFall, //Human
 	Adaptability,
-	VaccineGrenade,
-	BombBackpack,
-	BombardmentSupport,
-	CriticalHit,
-	SteelBullet,
-	ShotgunGrenade,
+	VaccineGrenade, //Human
+	BombBackpack, //Human
+	BombardmentSupport, //Human
+	CriticalHit, //Human
+	SteelBullet, //Human
+	ShotgunGrenade, //Human
 	BioBomb,
-	Fireball,
+	Fireball, //Human
 	Elephant,
-	NitrogenGrenade,
-	Icarus,
-	ThroughHole,
-	Elitist,
-	MoneyPower,
-	Craftsmanship,
+	NitrogenGrenade, //Human
+	Icarus, //All
+	ThroughHole, //Human
+	Elitist, //Human
+	MoneyPower, //Human
+	Craftsmanship, //Human
 	HPRob,
 	BombHardening,
 	ClawStrengthening,
 	SkillEvolution,
 	SteelSkin,
-	Intellectual,
+	Intellectual, //All
 	Bomber,
 	Revenge,
 }
