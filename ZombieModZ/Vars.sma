@@ -10,36 +10,71 @@ new Cvar_HolsterBomb, Cvar_Jump
 // Fakemeta
 new gFwSpawn, gFwUserInfected, gFwDummyResult
 
-// Arrays
-new Array:g_objective_ents, Array:sound_human_death, Array:sound_female_death, Array:sound_zombie_coming, Array:sound_zombie_comeback, Array:sound_zombie_attack, Array:sound_zombie_hitwall, Array:sound_zombie_swing
+// ZombieZ
+new UserLevel[MaxPlayer], UserExp[MaxPlayer],
+UserSkills[MaxPlayer][SkillEnum][2]
 
-// ZombieZ Skill
-new UserSkillList[SkillEnum][SkillType] =
+new SkillList[SkillEnum][2] =
 {
-	{ MoneyWorm}
+	{ MoneyWorm, All },
+	{ Boxer, Human },
+	{ IncreaseAmmo, Human },
+	{ FastReload, Human},
+	{ InvisibleReload, Human },
+	{ Cheetah, All },
+	{ Kangaroo, All },
+	{ EnhanceRecovery, All },
+	{ FocusAttack, Human },
+	{ Booster, Human },
+	{ BulletAddition, Human },
+	{ HuntingInstinct, All},
+	{ DoubleJump, All },
+	{ ExplosiveBullets, Human },
+	{ ReinforcedGenes, Zombie },
+	{ Resist, Zombie },
+	{ FireBullets, Human },
+	{ IncreaseStamina, All },
+	{ ContactInfection, Zombie },
+	{ Resurrection, Zombie },
+	{ SteelArmor, Zombie},
+	{ Flippers, Zombie },
+	{ SteelHead, Zombie },
+	{ Sharpshooter, Human },
+	{ SixthSense, Human },
+	{ HeroAppearance, All },
+	{ Enthusiasm, All },
+	{ Specialist, Human },
+	{ ForcedFall, Human },
+	{ Adaptability, Zombie },
+	{ VaccineGrenade, Human },
+	{ BombBackpack, Human },
+	{ BombardmentSupport, Human },
+	{ CriticalHit, Human },
+	{ SteelBullet, Human },
+	{ ShotgunGrenade, Human },
+	{ BioBomb, Zombie },
+	{ Fireball, Human },
+	{ Elephant, Zombie },
+	{ NitrogenGrenade, Human },
+	{ Icarus, All},
+	{ ThroughHole, Human },
+	{ Elitist, Human },
+	{ MoneyPower, Human},
+	{ Craftsmanship, Human },
+	{ HPRob, Zombie},
+	{ BombHardening, Zombie },
+	{ ClawStrengthening, Zombie },
+	{ SkillEvolution, Zombie },
+	{ SteelSkin, Zombie },
+	{ Intellectual, All },
+	{ Bomber, Zombie },
+	{ Revenge, Zombie }
+	//{ EndOfSkill, All}
 }
-//new SkillList[Skill]
 
-// Supplybox
-new Float:SUPPLYBOX_TIME, Float:SUPPLYBOX_TIME_FIRST
-new SUPPLYBOX_CLASSNAME[] = "bte_supplybox", 
-SUPPLYBOX_SOUND_PICKUP[]="zombi/get_box.wav", 
-SUPPLYBOX_SOUND_DROP[]="zombi/zombi_box.wav"
-new const SUPPLYBOX_MODEL[]="models/supplybox.mdl"
-
-new SUPPLYBOX_NUM, SUPPLYBOX_MAX
-
+// Unknown Yet
 new Float:g_spawns[MAX_SPAWNS][3][3], Float:g_spawns_box[MAX_SPAWNS][3]
 new g_spawnCount, g_spawnCount_box
-
-// ZombiBomb
-new Float:ZOMBIEBOM_RADIUS=400.0, Float:ZOMBIEBOM_POWER=1500.0
-new ZOMBIEBOM_SOUND_EXP[]="zombi/zombi_bomb_exp.wav"
-new ZOMBIEBOMB_MODEL_W[]="models/w_zombibomb.mdl", 
-ZOMBIEBOMB_MODEL_P[]="models/p_zombibomb.mdl"
-
-// Cache
-new cache_spr_zombie_respawn, cache_spr_zombiebomb_exp
 
 // Enviroments
 new g_light[2], g_skyname[32], g_fog_density[32], g_fog_color[32]
@@ -64,11 +99,8 @@ new gmsgSpecial
 new bot_quota, g_hamczbots
 
 // Need To Sort
-new	g_newround, g_endround, 
-g_startcount, g_rount_count, 
-g_supplybox_count, g_count_down, g_count_down2
+new	g_newround, g_endround, g_startcount, g_rount_count
 
-new Float:g_evolution[33], Float:g_flTotalDmg[33]
 new	g_level[33], g_nvg[33], 
 g_restore_health[33], g_respawning[33], g_respawn_count[33], 
 g_hero[33], g_human[33], 

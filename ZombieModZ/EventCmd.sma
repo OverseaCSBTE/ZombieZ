@@ -1,8 +1,8 @@
 public Event_HLTV()
 {
-	g_endround = 0
-	g_newround = 0
-	g_supplybox_count = 0
+	//g_endround = 0
+	//g_newround = 0
+	//g_supplybox_count = 0
 	//g_human_morale[0] = 0
 	//g_levelmax_check = 0
 	remove_task(TASK_MAKEZOMBIE)

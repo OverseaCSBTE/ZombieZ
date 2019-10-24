@@ -21,10 +21,13 @@ public HamF_Spawn_Player_Post(id)
 	bte_wpn_give_named_wpn(id, "usp")
 
 	set_pev(id, pev_skin, 0);
+
+	CreateProfile(id)
+
+	// ZombieZ Function
 }
 
 public HamF_TakeDamage(victim, inflictor, attacker, Float:damage, damage_type)
 {
-
 	return HAM_IGNORED
 }

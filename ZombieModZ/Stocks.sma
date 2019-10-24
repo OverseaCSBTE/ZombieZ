@@ -10,13 +10,6 @@ stock Set_Kvd(entity, const key[], const value[], const classname[])
 
 stock Connect_Reset(id)
 {
-	g_respawning[id] = 0
-	g_zombie[id] = 0
-	g_hero[id] = 0
-	g_sidekick[id] = 0
-	g_zombieclass[id] = 0
-	g_AliveCheckTime[id] = 0.0
-	g_zbclass_keep[id] = -1
 	MH_DrawRetina(id, "", 0, 1, 1, 1, 0.0)
 	MH_DrawRetina(id, "", 0, 1, 1, 2, 0.0)
 

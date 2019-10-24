@@ -7,7 +7,7 @@ enum SkillType
 
 enum SkillEnum
 {
-	MoneyWorm, //All
+	MoneyWorm = 0, //All
 	Boxer, //Human
 	IncreaseAmmo, //Human
 	FastReload, //Human
@@ -60,4 +60,5 @@ enum SkillEnum
 	Intellectual, //All
 	Bomber,
 	Revenge,
+	EndOfSkill
 }
