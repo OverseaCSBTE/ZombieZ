@@ -66,6 +66,8 @@ public plugin_init()
 	RegisterHam(Ham_Spawn, "player", "HamF_Spawn_Player_Post",1)
 
 	register_clcmd("chooseteam","CMD_ChooseTeam")
+
+	gZombieZ = engfunc(EngFunc_RegUserMsg, "DieHardZombieZ", -1)
 	
 	server_cmd("bot_stop 1")
 	server_cmd("sypb_stop 1")

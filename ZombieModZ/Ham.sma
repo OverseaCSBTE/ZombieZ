@@ -23,6 +23,7 @@ public HamF_Spawn_Player_Post(id)
 	set_pev(id, pev_skin, 0);
 
 	CreateProfile(id)
+	LevelUp(id)
 
 	// ZombieZ Function
 }

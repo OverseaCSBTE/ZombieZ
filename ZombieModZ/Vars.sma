@@ -95,6 +95,9 @@ new levelupsound
 // ImproveAPI
 new gmsgSpecial
 
+// Message
+new gZombieZ
+
 // Bot
 new bot_quota, g_hamczbots
 
