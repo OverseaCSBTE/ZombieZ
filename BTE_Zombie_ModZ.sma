@@ -15,6 +15,7 @@
 #include <xs>
 #include <round_terminator>
 #include <improve_api>
+
 #include "bte_api.inc"
 #include "metahook.inc"
 #include "cdll_dll.h"
@@ -28,8 +29,6 @@
 #define AUTHOR "NekoMeow"
 #define MaxPlayer 33
 #define MaxLevel 30
-// ==================================================================
-//#define _DEBUG
 // ==================================================================
 #include "ZombieModZ/Enum.sma"
 #include "ZombieModZ/Vars.sma"
@@ -58,7 +57,8 @@ public plugin_init()
 	register_logevent("LogEvent_RoundEnd", 2, "1=Round_End")
 	
 	// ImproveAPI
-	gmsgSpecial = engfunc(EngFunc_RegUserMsg, "Special2", -1);
+	gZombieZ = engfunc(EngFunc_RegUserMsg, "FuxkZ", -1)
+	//gmsgSpecial = engfunc(EngFunc_RegUserMsg, "Special2", -1);
 	bot_quota = get_cvar_pointer("bot_quota")
 
 	// Ham
@@ -67,7 +67,9 @@ public plugin_init()
 
 	register_clcmd("chooseteam","CMD_ChooseTeam")
 
-	gZombieZ = engfunc(EngFunc_RegUserMsg, "DieHardZombieZ", -1)
+	// Temp Command
+	register_clcmd("addlvl", "AddLevel")
+	register_clcmd("dellvl", "DecLevel")
 	
 	server_cmd("bot_stop 1")
 	server_cmd("sypb_stop 1")

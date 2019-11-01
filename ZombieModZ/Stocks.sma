@@ -100,3 +100,10 @@ stock StripWeapons(id)
 
 	dllfunc(DLLFunc_Use, g_player_weaponstrip, id)
 }
+
+stock msgbegin(msg_dest, msg_type, id = 0)
+{
+	new const Float:vOri[3] = {0.0, 0.0, 0.0}
+
+	engfunc(EngFunc_MessageBegin, msg_dest, msg_type, vOri, id);
+}

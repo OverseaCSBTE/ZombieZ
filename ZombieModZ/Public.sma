@@ -10,14 +10,17 @@ public CreateProfile(id)
 
 public LevelUp(id)
 {
-    //if (UserLevel[id] >= MaxLevel)
-        //return
+    
+}
 
-    //UserLevel[id] += 1
-    //UserExp[id] += 1
+public AddLevel(id)
+{
+    UserUnusedLevel[id]++
+    client_print(id, print_chat, "Client: %d have %d level", id, UserUnusedLevel[id])
+    client_print(id, print_chat, "Added %d 1 Level", id)
+}
 
-	engfunc(EngFunc_MessageBegin, MSG_ONE, gZombieZ, {0.0, 0.0, 0.0}, id)
-	//engfunc(EngFunc_MessageBegin, MSG_ONE, gZombieZ)
-    write_byte(1)
-    write_string("Evolve")
+public DecLevel(id)
+{
+    UserUnusedLevel[id]--
 }

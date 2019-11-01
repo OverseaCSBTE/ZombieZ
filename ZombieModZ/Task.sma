@@ -1,3 +1,8 @@
+enum Task(+= 2000)
+{
+	TaskCheckPoints = 1000
+}
+
 public Task_ChangeTeam(id)
 {
 	SetTeam(id, 2)
@@ -22,4 +27,40 @@ public Task_Register_Bots(id)
 	//RegisterHamFromEntity(Ham_Killed, id, "HamF_Killed_Post", 1)
 	g_hamczbots = 1
 	//if (is_user_alive(id)) fw_PlayerSpawn_Post(id)
+}
+
+public Task_CheckPoints(task)
+{
+	new id = task - TaskCheckPoints
+
+	if (is_user_alive(id))
+	{
+		if (UserUnusedLevel[id] >= 1)
+		{
+			msgbegin(MSG_ONE, gZombieZ, id)
+			//engfunc(EngFunc_MessageBegin, MSG_ONE, gZombieZ, {0.0, 0.0, 0.0}, index)
+			//engfunc(EngFunc_MessageBegin, MSG_ONE, gZombieZ)
+			write_byte(1)
+			write_string("Evolve")
+			message_end()
+			return
+		}
+		else
+		{
+			msgbegin(MSG_ONE, gZombieZ, id)
+			//engfunc(EngFunc_MessageBegin, MSG_ONE, gZombieZ, {0.0, 0.0, 0.0}, index)
+			//engfunc(EngFunc_MessageBegin, MSG_ONE, gZombieZ)
+			write_byte(0)
+			message_end()
+			return
+
+		}
+	}
+	else if (!is_user_alive(id))
+	{
+		msgbegin(MSG_ONE, gZombieZ, id)
+		write_byte(0)
+		message_end()
+		return
+	}
 }

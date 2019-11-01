@@ -17,13 +17,14 @@ public HamF_Spawn_Player_Post(id)
 	
 	SetRendering(id)
 	StripWeapons(id)
-	bte_wpn_give_named_wpn(id, "knife")
-	bte_wpn_give_named_wpn(id, "usp")
+	//bte_wpn_give_named_wpn(id, "knife")
+	//bte_wpn_give_named_wpn(id, "usp")
 
 	set_pev(id, pev_skin, 0);
 
 	CreateProfile(id)
-	LevelUp(id)
+	set_task(1.0, "Task_CheckPoints", id + TaskCheckPoints, "", 0, "a", 999)
+	//LevelUp(id)
 
 	// ZombieZ Function
 }

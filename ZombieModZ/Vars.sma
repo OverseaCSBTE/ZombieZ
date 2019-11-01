@@ -11,7 +11,7 @@ new Cvar_HolsterBomb, Cvar_Jump
 new gFwSpawn, gFwUserInfected, gFwDummyResult
 
 // ZombieZ
-new UserLevel[MaxPlayer], UserExp[MaxPlayer],
+new UserLevel[MaxPlayer], UserUnusedLevel[MaxPlayer], UserExp[MaxPlayer],
 UserSkills[MaxPlayer][SkillEnum][2]
 
 new SkillList[SkillEnum][2] =
